@@ -38,9 +38,10 @@
 			var self = this;
 
 			this.imgs.forEach(function(img, index){
-				if(self.inBottom(img) || self.inRight(img)){					
+				if(self.inview(img) && img.src.indexOf(self.opt.placeholder) > -1){
 					var src = img.getAttribute("data-src");
 					img.src = src;
+					self.imgs.splice(index, 1);
 				}
 			});
 		},
@@ -77,19 +78,5 @@
 			return !this.inTop(elem) && !this.inLeft(elem) && !this.inBottom(elem) && !this.inRight(elem);
 		}
 	}
-
-
-
 	window.LazyLoad = LazyLoad;
-
-
-
-
-
-
-
-
-
-
-
 })();
