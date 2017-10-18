@@ -48,7 +48,9 @@
 <script>
 var container = document.getElementById("container");
 var imgs = container.getElementsByTagName('img')
-var lazy = new LazyLoad(imgs);
+var lazy = new LazyLoad(imgs, {
+	effect: 'fadeIn'
+});
 </script>
 </body>
 </html>
